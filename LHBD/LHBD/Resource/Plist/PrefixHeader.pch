@@ -1,0 +1,82 @@
+//
+//  PrefixHeader.pch
+//  LHBD
+//
+//  Created by 周鑫 on 2018/6/14.
+//  Copyright © 2018年 tunjin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "CommonDefine.h"
+#import "Theme.h"
+#pragma mark - The three parties
+// 定义这个常量，就可以不用在开发过程中使用"mas_"前缀。
+#define MAS_SHORTHAND
+// 定义这个常量，就可以让Masonry帮我们自动把基础数据类型的数据，自动装箱为对象类型。
+#define MAS_SHORTHAND_GLOBALS
+#pragma mark - H file
+#import <Masonry/Masonry.h>
+
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+//#import <Reachability/Reachability.h>
+//#import <JSONModel/JSONModel.h>
+#import <MJRefresh.h>
+#import <MBProgressHUD.h>
+//#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+//#import <ZFPlayer/ZFPlayer.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+//#import <SDCycleScrollView/SDCycleScrollView.h>
+#import <YYCache/YYCache.h>
+//#import <YYCategories/YYCategories.h>
+#import <JKCategories/JKCategories.h>
+#import <SSZipArchive/SSZipCommon.h>
+#import <MyUUID/MyUUID.h>
+#import <Reachability/Reachability.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIButton+WebCache.h>
+
+
+
+#import "UIViewController+HUD.h"
+#import "NetWorkManager.h"
+#import "URLConstants.h"
+#import "ProgressHUD.h"
+#import "BasicConstants.h"
+
+
+#pragma mark - categories
+
+#import "NSString+Extension.h"
+#import "NSTimer+Extension.h"
+#import "NSDate+Extension.h"
+#import "NSArray+RemoveDuplicate.h"
+#import "NSMutableAttributedString+Extension.h"
+#import "NSDictionary+Extension.h"
+#import "NSObject+Release.h"
+#import "NSObject+Extension.h"
+#import "NSObject+NSCoding.h"
+
+#import "UIColor+Extension.h"
+#import "UIView+Rotate.h"
+#import "UINavigationBar+SetElement.h"
+#import "UIViewController+Extension.h"
+#import "UIButton+Extension.h"
+#import "UIImageView+GIF.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIDevice+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImageView+Extension.h"
+#import "UIScrollView+Extension.h"
+#import "UIViewController+HUD.h"
+#import "UIView+HUD.h"
+
+
+
+
+#endif /* PrefixHeader_pch */
