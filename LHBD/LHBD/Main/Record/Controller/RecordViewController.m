@@ -11,6 +11,8 @@
 #import "AudioModel.h"
 #import "AudioManager.h"
 
+#import "AppDelegate.h"
+#import "Audio+CoreDataClass.h"
 
 
 typedef NS_ENUM(NSUInteger, AudioState) {
@@ -399,63 +401,34 @@ typedef NS_ENUM(NSUInteger, AudioState) {
     if (title.length == 0) {
         title = @"未命名";
     }
-    if (password.length == 0) {
-        // 保存元数据
-        BOOL result = NO;
-        NSError * error = nil;
-        NSString *toPath = [self fullPathAtDocument:self.audioName];
-        NSString *path = [self fullPathAtCache:self.audioName];
-        result = [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:&error ];
-        if (!error){
-            // 保存元数据信息到数据库
-            AudioModel *audioModel = [[AudioModel alloc]initWithTitle:title Path:nil Date:self.audioName Password:password];
-            AudioManager *audioManager = [AudioManager sharedAudioManager];
-            YYCache *audioCache = audioManager.audioCache;
-            if ([audioCache containsObjectForKey:KeyAudioAry]) {
-                NSArray *audioAry = [audioCache objectForKey:KeyAudioAry];
-                NSMutableArray *muAry = [NSMutableArray arrayWithArray:audioAry];
-                [muAry insertObject:audioModel atIndex:0];
-                //            [muAry addObject:audioModel];
-                [audioCache setObject:muAry forKey:KeyAudioAry];
-            }else {
-                [audioCache setObject:@[audioModel] forKey:KeyAudioAry];
-            }
-            [self showToast:@"保存成功"];
-
-        }else {
-            DEBUG_LOG(@"copy失败：%@",[error localizedDescription]);
+   
+    // 保存元数据
+    BOOL result = NO;
+    NSError * error = nil;
+    NSString *toPath = [self fullPathAtDocument:self.audioName];
+    NSString *path = [self fullPathAtCache:self.audioName];
+    result = [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:&error ];
+    if (!error){
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+        // 创建托管对象，并指明创建的托管对象所属实体名
+        Audio *emp = [NSEntityDescription insertNewObjectForEntityForName:@"Audio" inManagedObjectContext:context];
+        emp.name = title;
+        emp.path = nil;
+        emp.password = password;
+        emp.date = self.audioName;
+        // 通过上下文保存对象，并在保存前判断是否有更改
+        NSError *error = nil;
+        if (context.hasChanges) {
+            [context save:&error];
+             [self showToast:@"保存成功"];
         }
-
-    }else {
-        // 保存元数据
-        BOOL result = NO;
-        NSError * error = nil;
-        NSString *toPath = [self fullPathAtDocument:self.audioName];
-        NSString *path = [self fullPathAtCache:self.audioName];
-        result = [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:&error ];
-        if (!error){
-            // 保存元数据信息到数据库
-            AudioModel *audioModel = [[AudioModel alloc]initWithTitle:title Path:nil Date:self.audioName Password:password];
-            AudioManager *audioManager = [AudioManager sharedAudioManager];
-            YYCache *audioCache = audioManager.audioCache;
-            if ([audioCache containsObjectForKey:KeyPassWordAudioAry]) {
-                NSArray *audioAry = [audioCache objectForKey:KeyPassWordAudioAry];
-                NSMutableArray *muAry = [NSMutableArray arrayWithArray:audioAry];
-                [muAry insertObject:audioModel atIndex:0];
-                //            [muAry addObject:audioModel];
-                [audioCache setObject:muAry forKey:KeyPassWordAudioAry];
-            }else {
-                [audioCache setObject:@[audioModel] forKey:KeyPassWordAudioAry];
-            }
-            [self showToast:@"保存成功"];
-
-        }else {
-            DEBUG_LOG(@"copy失败：%@",[error localizedDescription]);
+        // 错误处理
+        if (error) {
+            NSLog(@"CoreData Insert Data Error : %@", error);
         }
-
-
+        
     }
-
 
 }
 
@@ -490,6 +463,87 @@ typedef NS_ENUM(NSUInteger, AudioState) {
 }
 
 
-
+//- (void)saveAudioWithPassWord:(NSString *)password Title:(NSString *)title{
+//
+//    if (title.length == 0) {
+//        title = @"未命名";
+//    }
+//    if (password.length == 0) {
+//        // 保存元数据
+//        BOOL result = NO;
+//        NSError * error = nil;
+//        NSString *toPath = [self fullPathAtDocument:self.audioName];
+//        NSString *path = [self fullPathAtCache:self.audioName];
+//        result = [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:&error ];
+//        if (!error){
+//            //            // 保存元数据信息到数据库
+//            //            AudioModel *audioModel = [[AudioModel alloc]initWithTitle:title Path:nil Date:self.audioName Password:password];
+//            //            AudioManager *audioManager = [AudioManager sharedAudioManager];
+//            //            YYCache *audioCache = audioManager.audioCache;
+//            //            if ([audioCache containsObjectForKey:KeyAudioAry]) {
+//            //                NSArray *audioAry = [audioCache objectForKey:KeyAudioAry];
+//            //                NSMutableArray *muAry = [NSMutableArray arrayWithArray:audioAry];
+//            //                [muAry insertObject:audioModel atIndex:0];
+//            //                //            [muAry addObject:audioModel];
+//            //                [audioCache setObject:muAry forKey:KeyAudioAry];
+//            //            }else {
+//            //                [audioCache setObject:@[audioModel] forKey:KeyAudioAry];
+//            //            }
+//            //            [self showToast:@"保存成功"];
+//
+//            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//            NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+//            // 创建托管对象，并指明创建的托管对象所属实体名
+//            Audio *emp = [NSEntityDescription insertNewObjectForEntityForName:@"Audio" inManagedObjectContext:context];
+//            emp.name = title;
+//            emp.path = nil;
+//            emp.password = password;
+//            emp.date = self.audioName;
+//            // 通过上下文保存对象，并在保存前判断是否有更改
+//            NSError *error = nil;
+//            if (context.hasChanges) {
+//                [context save:&error];
+//                [self showToast:@"保存成功"];
+//            }
+//            // 错误处理
+//            if (error) {
+//                NSLog(@"CoreData Insert Data Error : %@", error);
+//            }
+//
+//        }
+//
+//
+//    }else {
+//        // 保存元数据
+//        BOOL result = NO;
+//        NSError * error = nil;
+//        NSString *toPath = [self fullPathAtDocument:self.audioName];
+//        NSString *path = [self fullPathAtCache:self.audioName];
+//        result = [[NSFileManager defaultManager]copyItemAtPath:path toPath:toPath error:&error ];
+//        if (!error){
+//            // 保存元数据信息到数据库
+//            AudioModel *audioModel = [[AudioModel alloc]initWithTitle:title Path:nil Date:self.audioName Password:password];
+//            AudioManager *audioManager = [AudioManager sharedAudioManager];
+//            YYCache *audioCache = audioManager.audioCache;
+//            if ([audioCache containsObjectForKey:KeyPassWordAudioAry]) {
+//                NSArray *audioAry = [audioCache objectForKey:KeyPassWordAudioAry];
+//                NSMutableArray *muAry = [NSMutableArray arrayWithArray:audioAry];
+//                [muAry insertObject:audioModel atIndex:0];
+//                //            [muAry addObject:audioModel];
+//                [audioCache setObject:muAry forKey:KeyPassWordAudioAry];
+//            }else {
+//                [audioCache setObject:@[audioModel] forKey:KeyPassWordAudioAry];
+//            }
+//            [self showToast:@"保存成功"];
+//
+//        }else {
+//            DEBUG_LOG(@"copy失败：%@",[error localizedDescription]);
+//        }
+//
+//
+//    }
+//
+//
+//}
 
 @end

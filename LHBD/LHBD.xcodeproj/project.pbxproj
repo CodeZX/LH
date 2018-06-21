@@ -137,6 +137,9 @@
 		3CC16D6A20D38903006B30BC /* SDLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16D6520D38902006B30BC /* SDLaunchViewController.m */; };
 		3CC16D6B20D38903006B30BC /* 进入应用.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC16D6720D38902006B30BC /* 进入应用.png */; };
 		3CC16D6D20D389A7006B30BC /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3CC16D6C20D389A7006B30BC /* launch.gif */; };
+		3CFE7D9520DA3B9000CD653C /* LHAudioModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE7D9320DA3B9000CD653C /* LHAudioModel.xcdatamodeld */; };
+		3CFE7D9A20DA3D3700CD653C /* Audio+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE7D9820DA3D3700CD653C /* Audio+CoreDataClass.m */; };
+		3CFE7D9B20DA3D3700CD653C /* Audio+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE7D9920DA3D3700CD653C /* Audio+CoreDataProperties.m */; };
 		E3E457D0CC1CC1C7D972D81F /* libPods-LHBD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F46323B60F64658FC11B269 /* libPods-LHBD.a */; };
 /* End PBXBuildFile section */
 
@@ -346,6 +349,11 @@
 		3CC16D6820D38902006B30BC /* SDLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLaunchViewController.h; sourceTree = "<group>"; };
 		3CC16D6C20D389A7006B30BC /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launch.gif; sourceTree = "<group>"; };
 		3CC16D6E20D3965F006B30BC /* LHBD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LHBD.entitlements; sourceTree = "<group>"; };
+		3CFE7D9420DA3B9000CD653C /* LHAudioModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LHAudioModel.xcdatamodel; sourceTree = "<group>"; };
+		3CFE7D9620DA3D3700CD653C /* Audio+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Audio+CoreDataClass.h"; path = "/Users/jinshengguan/Desktop/TJ/LH/LHBD/LHBD/Resource/Audio+CoreDataClass.h"; sourceTree = "<absolute>"; };
+		3CFE7D9720DA3D3700CD653C /* Audio+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Audio+CoreDataProperties.h"; path = "/Users/jinshengguan/Desktop/TJ/LH/LHBD/LHBD/Resource/Audio+CoreDataProperties.h"; sourceTree = "<absolute>"; };
+		3CFE7D9820DA3D3700CD653C /* Audio+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Audio+CoreDataClass.m"; path = "/Users/jinshengguan/Desktop/TJ/LH/LHBD/LHBD/Resource/Audio+CoreDataClass.m"; sourceTree = "<absolute>"; };
+		3CFE7D9920DA3D3700CD653C /* Audio+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Audio+CoreDataProperties.m"; path = "/Users/jinshengguan/Desktop/TJ/LH/LHBD/LHBD/Resource/Audio+CoreDataProperties.m"; sourceTree = "<absolute>"; };
 		4F46323B60F64658FC11B269 /* libPods-LHBD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LHBD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E75068A767FDA28A15B47C6 /* Pods-LHBD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHBD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LHBD/Pods-LHBD.debug.xcconfig"; sourceTree = "<group>"; };
 		98519FD9971FCC467E24652E /* Pods-LHBD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHBD.release.xcconfig"; path = "Pods/Target Support Files/Pods-LHBD/Pods-LHBD.release.xcconfig"; sourceTree = "<group>"; };
@@ -419,9 +427,14 @@
 		3CC16B8E20D2095F006B30BC /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3CFE7D9720DA3D3700CD653C /* Audio+CoreDataProperties.h */,
+				3CFE7D9620DA3D3700CD653C /* Audio+CoreDataClass.h */,
+				3CFE7D9820DA3D3700CD653C /* Audio+CoreDataClass.m */,
+				3CFE7D9920DA3D3700CD653C /* Audio+CoreDataProperties.m */,
 				3CC16D6C20D389A7006B30BC /* launch.gif */,
 				3CC16B8F20D20960006B30BC /* Plist */,
 				3CC16B9120D20960006B30BC /* main.m */,
+				3CFE7D9320DA3B9000CD653C /* LHAudioModel.xcdatamodeld */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1220,11 +1233,13 @@
 				3CC16BFE20D21051006B30BC /* GramophoneViewController.m in Sources */,
 				3CC16CB520D26D93006B30BC /* NetWorkManagerTwo.m in Sources */,
 				3CC16B9E20D20BF7006B30BC /* BasicTabBarController.m in Sources */,
+				3CFE7D9B20DA3D3700CD653C /* Audio+CoreDataProperties.m in Sources */,
 				3CC16CAA20D2644F006B30BC /* LYLAlertView.m in Sources */,
 				3CC16D5020D352A4006B30BC /* UIView+Rotate.m in Sources */,
 				3CC16CA620D2644F006B30BC /* TKAlertCenter.m in Sources */,
 				3CC16BFF20D21051006B30BC /* GramophoneViewControllerTwo.m in Sources */,
 				3CC16CA820D2644F006B30BC /* TKProgressBarView.m in Sources */,
+				3CFE7D9A20DA3D3700CD653C /* Audio+CoreDataClass.m in Sources */,
 				3CC16CA720D2644F006B30BC /* TKProgressAlertView.m in Sources */,
 				3CC16CCB20D273D2006B30BC /* ProgressHUD.m in Sources */,
 				3CC16CDF20D2784D006B30BC /* WebViewJavascriptBridgeBase.m in Sources */,
@@ -1251,6 +1266,7 @@
 				3CC16D5120D352A4006B30BC /* UIView+HUD.m in Sources */,
 				3CC16C0020D21051006B30BC /* GramophoneViewControllerCellTwo.m in Sources */,
 				3CC16BA820D20DEC006B30BC /* LHTabBarController.m in Sources */,
+				3CFE7D9520DA3B9000CD653C /* LHAudioModel.xcdatamodeld in Sources */,
 				3CC16D6020D352A4006B30BC /* NSString+Extension.m in Sources */,
 				3CC16B9320D20960006B30BC /* main.m in Sources */,
 				3CC16D5320D352A4006B30BC /* UIView+DragAndReset.m in Sources */,
@@ -1466,6 +1482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3CFE7D9320DA3B9000CD653C /* LHAudioModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3CFE7D9420DA3B9000CD653C /* LHAudioModel.xcdatamodel */,
+			);
+			currentVersion = 3CFE7D9420DA3B9000CD653C /* LHAudioModel.xcdatamodel */;
+			path = LHAudioModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3CC16B6920D20576006B30BC /* Project object */;
 }

@@ -13,6 +13,6 @@ extern NSString * const KeyAudioAry;
 extern NSString * const KeyPassWordAudioAry;
 
 @interface AudioManager : NSObject
-@property (nonatomic,strong) YYCache *audioCache;
+//@property (nonatomic,strong) YYCache *audioCache;
 WMSingletonH(AudioManager)
 @end

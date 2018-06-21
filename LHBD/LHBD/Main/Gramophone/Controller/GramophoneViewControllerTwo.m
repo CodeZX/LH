@@ -16,6 +16,8 @@
 #import "XTJWebNavigationViewController.h"
 
 #import "AudioManager.h"
+#import "AppDelegate.h"
+#import "Audio+CoreDataClass.h"
 //#import "XTJWebNavigationViewController.h"
 
 
@@ -178,11 +180,11 @@ static NSString *audioPath = @"QLCP";
 #pragma mark respond  means
 - (void)loadNewData {
     
-    [self.todayDataSource removeAllObjects];
-    [self.otheDataSource removeAllObjects];
-    AudioManager *audioManager = [AudioManager sharedAudioManager];
-    YYCache *audioCache = audioManager.audioCache;
-    self.dataSource = [audioCache objectForKey:KeyAudioAry];
+//    [self.todayDataSource removeAllObjects];
+//    [self.otheDataSource removeAllObjects];
+//    AudioManager *audioManager = [AudioManager sharedAudioManager];
+//    YYCache *audioCache = audioManager.audioCache;
+//    self.dataSource = [audioCache objectForKey:KeyAudioAry];
 //    self.dataSource = (NSMutableArray *) [self getAllfileByName:[self getAudiosPath]];
 //    for (AudioModel *model in self.dataSource) {
 //
@@ -197,8 +199,34 @@ static NSString *audioPath = @"QLCP";
 //
 //
 //    }
+    
+    [self.dataSource removeAllObjects];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    // 建立获取数据的请求对象，指明操作的实体为Employee
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Audio"];
+    // 创建谓词对象，过滤出符合要求的对象，也就是要删除的对象
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"password = %@", NULL];
+    request.predicate = predicate;
+    // 执行获取操作，获取所有Employee托管对象
+    NSError *error = nil;
+    NSArray *employees = [context executeFetchRequest:request error:&error];
+
+    [employees enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        Audio *audio = obj;
+        NSLog(@"Employee Name : %@, Height : %@, Brithday : %@  path:%@", audio.name, audio.date, audio.password,audio.path);
+        AudioModel *model = [[AudioModel alloc]initWithTitle:audio.name Path:audio.path Date:audio.date Password:audio.password];
+        [self.dataSource addObject:model];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView reloadData];
+    }];
+    // 错误处理
+    if (error) {
+        NSLog(@"CoreData Ergodic Data Error : %@", error);
+    }
+    
     [self.collectionView.mj_header endRefreshing];
-    [self.collectionView reloadData];
     
 }
 
@@ -331,7 +359,22 @@ static NSString *audioPath = @"QLCP";
     NSString *path = [self fullPathAtDocument:audioModel.date];
     [self deleteFileAtPath:path];
     [self.dataSource removeObjectAtIndex:indexPath.row];
-    [self synchronizeCache];
+//    [self synchronizeCache];
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
+    // 建立获取数据的请求对象，指明对Employee实体进行删除操作
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Audio"];
+    // 创建谓词对象，过滤出符合要求的对象，也就是要删除的对象
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"date = %@", audioModel.date];
+    request.predicate = predicate;
+    // 执行获取操作，找到要删除的对象
+    NSError *error = nil;
+    NSArray *employees = [context executeFetchRequest:request error:&error];
+    // 遍历符合删除要求的对象数组，执行删除操作
+    [employees enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [context deleteObject:obj];
+    }];
+    [appDelegate saveContext];
    
     
 }
@@ -339,13 +382,13 @@ static NSString *audioPath = @"QLCP";
 /**
  同步到缓存
  */
-- (void)synchronizeCache {
-    
-    AudioManager *audioManager = [AudioManager sharedAudioManager];
-    YYCache *audioCache = audioManager.audioCache;
-    [audioCache removeObjectForKey:KeyAudioAry];
-    [audioCache setObject:self.dataSource forKey:KeyAudioAry];
-}
+//- (void)synchronizeCache {
+//    
+//    AudioManager *audioManager = [AudioManager sharedAudioManager];
+//    YYCache *audioCache = audioManager.audioCache;
+//    [audioCache removeObjectForKey:KeyAudioAry];
+//    [audioCache setObject:self.dataSource forKey:KeyAudioAry];
+//}
 
 -(BOOL)deleteFileAtPath:(NSString *)path{
    
@@ -386,5 +429,10 @@ static NSString *audioPath = @"QLCP";
     }
     return _otheDataSource;
 }
-
+- (NSMutableArray *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [[NSMutableArray alloc]init];
+    }
+    return _dataSource;
+}
 @end

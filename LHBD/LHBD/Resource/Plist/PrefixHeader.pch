@@ -31,7 +31,7 @@
 //#import <ZFPlayer/ZFPlayer.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 //#import <SDCycleScrollView/SDCycleScrollView.h>
-#import <YYCache/YYCache.h>
+//#import <YYCache/YYCache.h>
 //#import <YYCategories/YYCategories.h>
 #import <JKCategories/JKCategories.h>
 #import <SSZipArchive/SSZipCommon.h>

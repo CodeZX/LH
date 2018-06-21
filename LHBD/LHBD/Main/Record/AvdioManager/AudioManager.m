@@ -17,10 +17,10 @@ static NSString * const audioCacheName = @"audioc";
 
 @implementation AudioManager
 WMSingletonM(AudioManager)
-- (YYCache *)audioCache {
-    if (!_audioCache) {
-        _audioCache = [[YYCache alloc]initWithName:audioCacheName];
-    }
-    return  _audioCache;
-}
+//- (YYCache *)audioCache {
+//    if (!_audioCache) {
+//        _audioCache = [[YYCache alloc]initWithName:audioCacheName];
+//    }
+//    return  _audioCache;
+//}
 @end
