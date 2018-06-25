@@ -10,7 +10,7 @@
 #define kNetWorkManager [NetWorkManager sharedInstance]
 
 #import "NetWorkManager.h"
-#import <MyUUID/SPIMyUUID.h>
+//#import <MyUUID/SPIMyUUID.h>
 
 #import <AVFoundation/AVAsset.h>
 #import <AVFoundation/AVAssetExportSession.h>

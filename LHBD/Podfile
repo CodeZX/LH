@@ -3,8 +3,8 @@ platform :ios, '8.0’
 target ‘LHBD’ do
 
  pod 'Reachability', '~> 3.2'
-pod 'MyUUID'
-pod 'SSZipArchive'
+#pod 'MyUUID'
+#pod 'SSZipArchive'
 #pod 'YYCache'
 pod 'JKCategories'
 pod 'JPush'

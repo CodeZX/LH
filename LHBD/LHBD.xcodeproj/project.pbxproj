@@ -90,14 +90,8 @@
 		3CC16CB520D26D93006B30BC /* NetWorkManagerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CB320D26D93006B30BC /* NetWorkManagerTwo.m */; };
 		3CC16CB620D26D93006B30BC /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CB420D26D93006B30BC /* NetWorkManager.m */; };
 		3CC16CC720D273D2006B30BC /* AppUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CB920D273D2006B30BC /* AppUtility.m */; };
-		3CC16CC820D273D2006B30BC /* JSBridgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CBB20D273D2006B30BC /* JSBridgeManager.m */; };
 		3CC16CCA20D273D2006B30BC /* FileCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CC220D273D2006B30BC /* FileCacheManager.m */; };
 		3CC16CCB20D273D2006B30BC /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CC320D273D2006B30BC /* ProgressHUD.m */; };
-		3CC16CCC20D273D2006B30BC /* ZipFileArchiveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CC520D273D2006B30BC /* ZipFileArchiveManager.m */; };
-		3CC16CDF20D2784D006B30BC /* WebViewJavascriptBridgeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CD720D2784D006B30BC /* WebViewJavascriptBridgeBase.m */; };
-		3CC16CE020D2784D006B30BC /* WKWebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CD820D2784D006B30BC /* WKWebViewJavascriptBridge.m */; };
-		3CC16CE120D2784D006B30BC /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CD920D2784D006B30BC /* WebViewJavascriptBridge.m */; };
-		3CC16CE220D2784D006B30BC /* WebViewJavascriptBridge_JS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CDC20D2784D006B30BC /* WebViewJavascriptBridge_JS.m */; };
 		3CC16CFA20D27CB1006B30BC /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC16CEF20D27CB1006B30BC /* back@2x.png */; };
 		3CC16CFB20D27CB1006B30BC /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC16CF020D27CB1006B30BC /* back@3x.png */; };
 		3CC16CFC20D27CB1006B30BC /* XTJWebNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC16CF120D27CB1006B30BC /* XTJWebNavigationViewController.m */; };
@@ -255,22 +249,10 @@
 		3CC16CB420D26D93006B30BC /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 		3CC16CB920D273D2006B30BC /* AppUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtility.m; sourceTree = "<group>"; };
 		3CC16CBA20D273D2006B30BC /* FileCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCacheManager.h; sourceTree = "<group>"; };
-		3CC16CBB20D273D2006B30BC /* JSBridgeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeManager.m; sourceTree = "<group>"; };
-		3CC16CBC20D273D2006B30BC /* ZipFileArchiveManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipFileArchiveManager.h; sourceTree = "<group>"; };
 		3CC16CBE20D273D2006B30BC /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		3CC16CBF20D273D2006B30BC /* AppUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtility.h; sourceTree = "<group>"; };
-		3CC16CC120D273D2006B30BC /* JSBridgeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeManager.h; sourceTree = "<group>"; };
 		3CC16CC220D273D2006B30BC /* FileCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheManager.m; sourceTree = "<group>"; };
 		3CC16CC320D273D2006B30BC /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
-		3CC16CC520D273D2006B30BC /* ZipFileArchiveManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipFileArchiveManager.m; sourceTree = "<group>"; };
-		3CC16CD720D2784D006B30BC /* WebViewJavascriptBridgeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridgeBase.m; sourceTree = "<group>"; };
-		3CC16CD820D2784D006B30BC /* WKWebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		3CC16CD920D2784D006B30BC /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
-		3CC16CDA20D2784D006B30BC /* WebViewJavascriptBridge_JS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge_JS.h; sourceTree = "<group>"; };
-		3CC16CDB20D2784D006B30BC /* WebViewJavascriptBridgeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridgeBase.h; sourceTree = "<group>"; };
-		3CC16CDC20D2784D006B30BC /* WebViewJavascriptBridge_JS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge_JS.m; sourceTree = "<group>"; };
-		3CC16CDD20D2784D006B30BC /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
-		3CC16CDE20D2784D006B30BC /* WKWebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewJavascriptBridge.h; sourceTree = "<group>"; };
 		3CC16CE720D27B95006B30BC /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		3CC16CE820D27B95006B30BC /* CommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
 		3CC16CEA20D27BAA006B30BC /* Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
@@ -687,7 +669,6 @@
 			children = (
 				3CC16D6320D38902006B30BC /* SDLaunch(引导页) */,
 				3CC16CEC20D27CB1006B30BC /* WebView */,
-				3CC16CD620D2784D006B30BC /* WebViewJavascriptBridge */,
 				3CC16C8620D2644F006B30BC /* AlertView */,
 			);
 			path = Vender;
@@ -767,32 +748,12 @@
 			children = (
 				3CC16CB920D273D2006B30BC /* AppUtility.m */,
 				3CC16CBA20D273D2006B30BC /* FileCacheManager.h */,
-				3CC16CBB20D273D2006B30BC /* JSBridgeManager.m */,
-				3CC16CBC20D273D2006B30BC /* ZipFileArchiveManager.h */,
 				3CC16CBE20D273D2006B30BC /* ProgressHUD.h */,
 				3CC16CBF20D273D2006B30BC /* AppUtility.h */,
-				3CC16CC120D273D2006B30BC /* JSBridgeManager.h */,
 				3CC16CC220D273D2006B30BC /* FileCacheManager.m */,
 				3CC16CC320D273D2006B30BC /* ProgressHUD.m */,
-				3CC16CC520D273D2006B30BC /* ZipFileArchiveManager.m */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		3CC16CD620D2784D006B30BC /* WebViewJavascriptBridge */ = {
-			isa = PBXGroup;
-			children = (
-				3CC16CD720D2784D006B30BC /* WebViewJavascriptBridgeBase.m */,
-				3CC16CD820D2784D006B30BC /* WKWebViewJavascriptBridge.m */,
-				3CC16CD920D2784D006B30BC /* WebViewJavascriptBridge.m */,
-				3CC16CDA20D2784D006B30BC /* WebViewJavascriptBridge_JS.h */,
-				3CC16CDB20D2784D006B30BC /* WebViewJavascriptBridgeBase.h */,
-				3CC16CDC20D2784D006B30BC /* WebViewJavascriptBridge_JS.m */,
-				3CC16CDD20D2784D006B30BC /* WebViewJavascriptBridge.h */,
-				3CC16CDE20D2784D006B30BC /* WKWebViewJavascriptBridge.h */,
-			);
-			name = WebViewJavascriptBridge;
-			path = ../../../../LHBD/BasicFramework/Vender/WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
 		3CC16CE620D27B95006B30BC /* Macros */ = {
@@ -1220,7 +1181,6 @@
 				3CC16CA920D2644F006B30BC /* UIView+TKCategory.m in Sources */,
 				3CC16D5B20D352A4006B30BC /* NSObject+Release.m in Sources */,
 				3CC16D5820D352A4006B30BC /* UIColor+Extension.m in Sources */,
-				3CC16CCC20D273D2006B30BC /* ZipFileArchiveManager.m in Sources */,
 				3CC16C2F20D2107B006B30BC /* PasswordBoxViewController.m in Sources */,
 				3CC16D6220D352A4006B30BC /* NSString+Verify.m in Sources */,
 				3CC16D4E20D352A4006B30BC /* UIImageView+Extension.m in Sources */,
@@ -1228,7 +1188,6 @@
 				3CC16C5120D21091006B30BC /* AudioModel.m in Sources */,
 				3CC16D6A20D38903006B30BC /* SDLaunchViewController.m in Sources */,
 				3CC16D5E20D352A4006B30BC /* NSDate+Extension.m in Sources */,
-				3CC16CC820D273D2006B30BC /* JSBridgeManager.m in Sources */,
 				3CC16CFD20D27CB1006B30BC /* UIImage+Extension.m in Sources */,
 				3CC16BFE20D21051006B30BC /* GramophoneViewController.m in Sources */,
 				3CC16CB520D26D93006B30BC /* NetWorkManagerTwo.m in Sources */,
@@ -1242,17 +1201,14 @@
 				3CFE7D9A20DA3D3700CD653C /* Audio+CoreDataClass.m in Sources */,
 				3CC16CA720D2644F006B30BC /* TKProgressAlertView.m in Sources */,
 				3CC16CCB20D273D2006B30BC /* ProgressHUD.m in Sources */,
-				3CC16CDF20D2784D006B30BC /* WebViewJavascriptBridgeBase.m in Sources */,
 				3CC16D5220D352A4006B30BC /* UIView+Extension.m in Sources */,
 				3CC16CCA20D273D2006B30BC /* FileCacheManager.m in Sources */,
 				3CC16BA120D20C53006B30BC /* BasicViewController.m in Sources */,
 				3CC16D0520D34C66006B30BC /* URLConstants.m in Sources */,
 				3CC16D5620D352A4006B30BC /* UIButton+Extension.m in Sources */,
 				3CC16CFE20D27CB1006B30BC /* CountdownView.m in Sources */,
-				3CC16CE120D2784D006B30BC /* WebViewJavascriptBridge.m in Sources */,
 				3CC16D5D20D352A4006B30BC /* NSDictionary+Extension.m in Sources */,
 				3CC16B8D20D2063A006B30BC /* AppDelegate.m in Sources */,
-				3CC16CE020D2784D006B30BC /* WKWebViewJavascriptBridge.m in Sources */,
 				3CC16D6120D352A4006B30BC /* NSArray+RemoveDuplicate.m in Sources */,
 				3CC16C5C20D21091006B30BC /* AudioManager.m in Sources */,
 				3CC16D4F20D352A4006B30BC /* UIViewController+Extension.m in Sources */,
@@ -1277,7 +1233,6 @@
 				3CC16D6920D38903006B30BC /* SDLaunchWebViewController.m in Sources */,
 				3CC16D4A20D352A4006B30BC /* UIBarButtonItem+Extension.m in Sources */,
 				3CC16D5420D352A4006B30BC /* UIDevice+Extension.m in Sources */,
-				3CC16CE220D2784D006B30BC /* WebViewJavascriptBridge_JS.m in Sources */,
 				3CC16C5220D21091006B30BC /* FXRecordArcView.m in Sources */,
 				3CC16D5920D352A4006B30BC /* NSMutableAttributedString+Extension.m in Sources */,
 				3CC16BA420D20CEC006B30BC /* BasicNavigationController.m in Sources */,
